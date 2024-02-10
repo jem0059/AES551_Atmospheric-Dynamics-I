@@ -1,0 +1,51 @@
+"""
+Created on Sun Oct  1 16:00:00 2023
+
+@author: 17708
+"""
+
+import matplotlib.pyplot as plt 
+import numpy as np
+# 7a
+x_a=np.linspace(-10, 10, 20) #Create an even spaced array for x values
+y_a=np.linspace(-10, 10, 20) #Create an even spaced array for y values
+fig_a=plt.figure() #Set a figure for the software
+(x_a,y_a)=np.meshgrid(x_a,y_a) #Create an even spaced array of x and y values
+u_a=x_a #Make vectors in the x-direction
+v_a=y_a #Make vectors in the y-direction
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.quiver(x_a,y_a,u_a,v_a) #Plot the vector field for divergence
+fig, ax = plt.subplots() #Allows multiple plots to exist at once
+fig_a.savefig('fig_a') #Make sure the paranthesses are filled in with the figure's variable name so it saves in the folder
+
+#7b
+x_b=np.linspace(-10, 10, 20) #Create an even spaced array for x values
+y_b=np.linspace(-10, 10, 20) #Create an even spaced array for y values
+fig_b=plt.figure() #Set a figure for the software
+(x_b,y_b)=np.meshgrid(x_b,y_b) #Create an even spaced array of x and y values
+u_b=-x_b #Make vectors in the x-direction
+v_b=-y_b #Make vectors in the y-direction
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.quiver(x_b,y_b,u_b,v_b) #Plot the vector field for divergence
+fig_b.savefig('fig_b') #Make sure the paranthesses are filled in with the figure's variable name so it saves in the folder
+
+#7c
+from mpl_toolkits import mplot3d
+x_c=np.linspace(-10, 10, 3) #Create an even spaced array for x values
+y_c=np.linspace(-10, 10, 3) #Create an even spaced array for y values
+z_c=np.linspace(-10,10,3) #Create an even spaced array for z values
+fig_c=plt.figure() #Set a figure for the software
+ax=plt.axes(projection='3d') #Set the graph's projection to 3D
+ax.set_xlim([-30,30]) #Set the x-limit for the 3D graph
+ax.set_ylim([-30,30]) #Set the y-limit for the 3D graph
+ax.set_zlim([-30,30]) #Set the z-limit for the 3D graph
+(x_c,y_c,z_c)=np.meshgrid(x_c,y_c,z_c)  #Create an even spaced array of x, y, and z values
+u_c=x_c #Make vectors in the x-direction
+v_c=y_c #Make vectors in the y-direction
+w_c=z_c #Make vectors in the z-direction
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+ax.quiver(x_c,y_c,z_c,u_c,v_c,w_c) #Plot the vector field for divergence
+fig_c.savefig('fig_c') #Make sure the paranthesses are filled in with the figure's variable name so it saves in the folder
