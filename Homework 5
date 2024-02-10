@@ -1,0 +1,8 @@
+import numpy as np
+import matplotlib.pyplot as plt
+latitude=np.arange(0,100,10) #Latitude spaced out in values of ten
+thermal_wind=(-0.0522/np.sin(latitude))*((1193**2*latitude)+1940*latitude+429) #Equation of thermal wind
+plt.plot(latitude,thermal_wind,marker='^') #Latitude as independent variable and thermal wind as dependent variable
+plt.xlabel('Latitude')
+plt.ylabel('Thermal Wind')
+plt.show()
